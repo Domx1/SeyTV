@@ -2,175 +2,470 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>SeyTV Inquiries</title>
+  <title>SeyTV – Premium TV Streaming Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root{
-      --card:#0f172a;
+      --bg:#ffffff;
+      --bg-alt:#f8f9fb;
       --accent:#22c55e;
-      --accent-soft:rgba(34,197,94,0.15);
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --border:#1f2937;
+      --accent-soft:rgba(34,197,94,0.12);
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --card:#ffffff;
     }
     *{box-sizing:border-box;margin:0;padding:0}
+    html,body{scroll-behavior:smooth;}
     body{
       min-height:100vh;
       font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-
-      /* ⭐ OPTION A – Premium Blue/Purple Glow Background */
-      background: radial-gradient(circle at 30% 20%, #4f46e5 0%, #1e1b4b 35%, #000 100%);
-
+      background:var(--bg);
       color:var(--text);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:16px;
     }
-    .card{
-      width:100%;
-      max-width:430px;
-      background:rgba(2,6,23,0.9);
-      border-radius:24px;
-      padding:28px 24px;
-      border:1px solid var(--border);
-      box-shadow:0 22px 60px rgba(0,0,0,0.75);
-      position:relative;
-      overflow:hidden;
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 16px;}
+
+    /* NAVBAR */
+    header{
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,255,255,0.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
     }
-    .glow{
-      position:absolute;
-      inset:-40%;
-      background:radial-gradient(circle at top,var(--accent-soft) 0,transparent 55%);
-      opacity:0.6;
-      pointer-events:none;
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      height:60px;
     }
-    .card-inner{position:relative;z-index:1}
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:0.08em;
-      padding:3px 9px;
-      border-radius:999px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(55,65,81,0.9);
-      color:var(--muted);
-      margin-bottom:14px;
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;
     }
-    .status-dot{
-      width:8px;height:8px;border-radius:999px;
+    .brand-logo{
+      width:26px;height:26px;border-radius:999px;
       background:var(--accent);
-      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+      display:flex;align-items:center;justify-content:center;
+      font-size:14px;color:#ffffff;font-weight:700;
+    }
+    .nav-links{
+      display:flex;gap:18px;font-size:13px;color:var(--muted);
+    }
+    .nav-links a:hover{color:var(--accent);}
+    .nav-cta{
+      font-size:13px;
+      padding:6px 12px;border-radius:999px;
+      border:none;background:var(--accent);color:#ffffff;
+      font-weight:600;cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      padding:40px 0;
+      background:var(--bg);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr 1fr;
+      gap:32px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+      padding:3px 9px;border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);margin-bottom:10px;
     }
     h1{
-      font-size:23px;
-      margin-bottom:10px;
-      font-weight:600;
+      font-size:34px;font-weight:700;margin-bottom:12px;
     }
-    .subtitle{
-      font-size:14px;
-      color:var(--muted);
-      margin-bottom:22px;
-      line-height:1.45;
+    .hero-sub{
+      font-size:15px;color:var(--muted);margin-bottom:20px;max-width:480px;
     }
-
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:22px;
-      font-size:11px;
-      color:var(--muted);
-      gap:12px;
+    .hero-highlights{
+      display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;
     }
-
-    .footer-row span strong{color:var(--text);font-weight:600;}
-
-    .btn-chat{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:14px;
-      padding:10px 18px;
-      border-radius:999px;
-      border:none;
-      background:var(--accent);
-      color:#022c22;
-      font-weight:600;
+    .pill{
+      padding:5px 12px;border-radius:999px;
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      font-size:12px;color:#374151;
+    }
+    .pill-strong{
+      background:var(--accent-soft);border-color:var(--accent);color:var(--accent);
+    }
+    .hero-actions{
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;
+    }
+    .btn-primary{
+      padding:10px 18px;border:none;border-radius:999px;
+      background:var(--accent);color:#ffffff;font-weight:600;font-size:14px;
       cursor:pointer;
-      white-space:nowrap;
     }
-    .btn-chat-icon{
-      width:16px;height:16px;
-      border-radius:999px;
-      border:2px solid #022c22;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:11px;
-      background:rgba(255,255,255,0.85);
+    .hero-note{
+      font-size:12px;color:var(--muted);
+    }
+    .hero-media img{
+      width:100%;border-radius:16px;border:1px solid var(--border);
+      display:block;
     }
 
-    .btn-chat:active{
-      transform:translateY(1px);
-      box-shadow:0 6px 18px rgba(34,197,94,0.3);
+    /* SECTIONS */
+    section{padding:38px 0;}
+    section:nth-of-type(even){background:var(--bg-alt);}
+    .section-header{
+      display:flex;justify-content:space-between;align-items:flex-start;
+      gap:16px;margin-bottom:20px;
+    }
+    .section-title{font-size:22px;font-weight:700;margin-bottom:6px;}
+    .section-sub{font-size:14px;color:var(--muted);max-width:420px;}
+
+    /* CHANNEL GRID */
+    .channel-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;
+    }
+    .channel-card{
+      padding:16px;border-radius:14px;
+      background:#ffffff;border:1px solid var(--border);
+      font-size:13px;
+    }
+    .channel-tag{font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
+    .channel-name{font-weight:600;margin-bottom:4px;}
+    .channel-note{font-size:13px;color:var(--muted);}
+
+    /* PACKAGES */
+    .packages{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;
+    }
+    .plan{
+      padding:18px;border-radius:18px;
+      background:#ffffff;border:1px solid var(--border);
+      font-size:13px;
+    }
+    .plan.highlight{
+      border-color:var(--accent);
+      background:#f0fdf4;
+    }
+    .plan-name{font-weight:600;font-size:15px;}
+    .plan-price{font-size:20px;font-weight:700;margin-top:6px;}
+    .plan-price span{font-size:11px;color:var(--muted);font-weight:400;margin-left:4px;}
+    .plan-list{list-style:none;margin-top:10px;padding-left:0;}
+    .plan-list li{font-size:13px;color:var(--muted);margin-bottom:6px;}
+    .plan-btn{
+      margin-top:12px;padding:8px 12px;font-size:13px;
+      border-radius:999px;background:var(--accent);color:#ffffff;border:none;
+      cursor:pointer;
+    }
+    .plan-footer{font-size:12px;color:var(--muted);margin-top:4px;}
+
+    /* REQUIREMENTS SECTION */
+    .steps{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;
+    }
+    .step{
+      padding:16px;border-radius:16px;background:#ffffff;border:1px solid var(--border);
+      font-size:13px;
+    }
+    .step-num{
+      width:24px;height:24px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--accent-soft);color:var(--accent);font-size:12px;
+      margin-bottom:6px;font-weight:700;
+    }
+    .step-title{font-weight:600;margin-bottom:4px;}
+    .step-text{font-size:13px;color:var(--muted);}
+
+    /* CONTACT */
+    .contact-card{
+      padding:18px;border-radius:18px;background:#ffffff;border:1px solid var(--border);
+      display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;
+      font-size:13px;
+    }
+    .contact-main{max-width:420px;}
+    .contact-main strong{display:block;font-size:15px;margin-bottom:4px;}
+    .contact-note{font-size:12px;color:var(--muted);margin-top:4px;}
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:14px 0;background:var(--bg);font-size:12px;color:var(--muted);
     }
 
-    @media(max-width:480px){
-      .card{border-radius:18px;padding:22px 18px;}
-      h1{font-size:20px;}
-      .footer-row{flex-direction:column;align-items:flex-start;}
-      .btn-chat{align-self:flex-end;}
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr;}
+      .hero-media{margin-top:16px;}
+      header{position:static;}
+      .nav-links{display:none;} /* hide menu on small for now */
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="glow"></div>
-    <div class="card-inner">
-      <div class="badge">
-        <span class="status-dot"></span>
-        Online
-      </div>
 
-      <h1>SeyTV Inquiries</h1>
-      <p class="subtitle">
-        Chat with us for more information.
-      </p>
-
-      <div class="footer-row">
-        <span>Reply time: <strong>usually under 10 minutes</strong></span>
-        <button class="btn-chat" onclick="openTawk()">
-          <span class="btn-chat-icon">💬</span>
-          <span>Start Chat</span>
-        </button>
+  <!-- NAVBAR -->
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="brand-logo">S</div>
+          <div>SeyTV</div>
+        </div>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#channels">Channels</a>
+          <a href="#packages">Packages</a>
+          <a href="#requirements">Requirements</a>
+          <a href="#how">How it works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav-cta" onclick="openTawk()">Chat with us</button>
       </div>
     </div>
-  </div>
+  </header>
 
-  <!-- Start of Tawk.to Script -->
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Premium TV streaming service</div>
+          <h1>All your favourite TV in one place.</h1>
+          <p class="hero-sub">
+            8000+ live channels, sports, movies and series – delivered over the internet to your Android TV or Firestick.
+          </p>
+
+          <div class="hero-highlights">
+            <span class="pill pill-strong">8000+ channels</span>
+            <span class="pill">Sports · Movies · Series</span>
+            <span class="pill">Android TV &amp; Firestick</span>
+            <span class="pill">Annual subscription</span>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="openTawk()">Get more information</button>
+            <span class="hero-note">Ask about prices, free trials and device setup.</span>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="https://placehold.co/600x360/png?text=SeyTV+Streaming+Preview" alt="TV Streaming Service preview">
+        </div>
+      </div>
+    </section>
+
+    <!-- CHANNELS -->
+    <section id="channels">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Channel highlights</div>
+            <p class="section-sub">
+              Popular sports, movie and entertainment channels – plus many more. Availability may vary by package.
+            </p>
+          </div>
+        </div>
+
+        <div class="channel-grid">
+          <div class="channel-card">
+            <div class="channel-tag">Sports</div>
+            <div class="channel-name">Sky Sports, BT Sport &amp; more</div>
+            <div class="channel-note">Live football, Premier League, F1 and other major events.</div>
+          </div>
+          <div class="channel-card">
+            <div class="channel-tag">Movies &amp; series</div>
+            <div class="channel-name">Sky Cinema, Netflix, Prime Video</div>
+            <div class="channel-note">Series and on-demand content.</div>
+          </div>
+          <div class="channel-card">
+            <div class="channel-tag">Entertainment</div>
+            <div class="channel-name">UK &amp; US channels</div>
+            <div class="channel-note">News, lifestyle and general entertainment channels.</div>
+          </div>
+          <div class="channel-card">
+            <div class="channel-tag">Kids</div>
+            <div class="channel-name">Cartoons &amp; family channels</div>
+            <div class="channel-note">Great content for younger viewers.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Packages</div>
+            <p class="section-sub">
+              Annual subscription – simple pricing with access to thousands of channels. Contact us for the latest offers and full channel list.
+            </p>
+          </div>
+        </div>
+
+        <div class="packages">
+          <div class="plan">
+            <div class="plan-name">Standard</div>
+            <div class="plan-price">SCR 1,500<span>/ year</span></div>
+            <ul class="plan-list">
+              <li>Access to 8000+ channels.</li>
+              <li>Sports, movies, news and entertainment.</li>
+              <li>1 device connection.</li>
+              <li>Support included.</li>
+            </ul>
+            <button class="plan-btn" onclick="openTawk()">Ask about Standard</button>
+          </div>
+
+          <div class="plan highlight">
+            <div class="plan-name">Premium</div>
+            <div class="plan-price">SCR 2,400<span>/ year</span></div>
+            <ul class="plan-list">
+              <li>Access to 8000+ channels.</li>
+              <li>All movies &amp; series libraries included.</li>
+              <li>1 device connection.</li>
+              <li>Support included.</li>
+            </ul>
+            <button class="plan-btn" onclick="openTawk()">Ask about Premium</button>
+            <div class="plan-footer">Ultimate package with full channel access.</div>
+          </div>
+
+          <div class="plan">
+            <div class="plan-name">Custom &amp; groups</div>
+            <ul class="plan-list">
+              <li>Multiple devices or special requirements.</li>
+              <li>Perfect for families or group setups.</li>
+            </ul>
+            <button class="plan-btn" onclick="openTawk()">Talk to us</button>
+            <div class="plan-footer">We can help design a package for your needs.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section id="requirements">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Requirements</div>
+            <p class="section-sub">
+              To enjoy smooth and stable streaming on SeyTV, you'll need the following:
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-title">Compatible device</div>
+            <p class="step-text">
+              Android TV, Android TV Box, or Amazon Fire Stick.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-title">Good internet</div>
+            <p class="step-text">
+              A stable unlimited internet connection for best performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="section-title">How it works</div>
+            <p class="section-sub">
+              Getting started is simple. All you need is a good internet connection and a compatible device.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-title">Chat with us</div>
+            <p class="step-text">
+              Use the chat to tell us your name, preferred device and any questions you have.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-title">Choose a package</div>
+            <p class="step-text">
+              We’ll recommend the best package based on your viewing needs and budget.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-title">Receive app &amp; login</div>
+            <p class="step-text">
+              You’ll receive the app details and login credentials, then you can start watching.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Inquiries &amp; support</div>
+            <p class="section-sub">
+              Send us a message in the chat and we’ll respond as soon as possible.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-main">
+            <strong>SeyTV inquiries</strong>
+            <p>
+              For prices, free trials, device setup or any other questions, please reach out via the live chat.
+            </p>
+            <p class="contact-note">
+              You can include your name and mobile / WhatsApp number if you’d like us to contact you directly.
+            </p>
+          </div>
+          <button class="btn-primary" onclick="openTawk()">Open chat</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+      <span>© <span id="year"></span> SeyTV. All rights reserved.</span>
+      <span>For informational purposes – channel availability may change over time.</span>
+    </div>
+  </footer>
+
+  <!-- Tawk.to widget -->
   <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/692d6bfc729474197b62c8e2/1jbcmrlnc';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/692d6bfc729474197b62c8e2/1jbcmrlnc';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
 
-  function openTawk(){
-    if(window.Tawk_API && Tawk_API.maximize){
-      Tawk_API.maximize();
-    }else{
-      alert("Chat is loading… please wait 2–3 seconds and try again.");
+    function openTawk(){
+      if(window.Tawk_API && Tawk_API.maximize){
+        Tawk_API.maximize();
+      }else{
+        alert("Chat is loading… please wait a few seconds and try again.");
+      }
     }
-  }
+
+    document.addEventListener("DOMContentLoaded", function(){
+      var y = new Date().getFullYear();
+      var el = document.getElementById("year");
+      if(el){ el.textContent = y; }
+    });
   </script>
-  <!-- End of Tawk.to Script -->
 </body>
 </html>
