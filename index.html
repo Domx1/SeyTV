@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SeyTV Inquiries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --card:#0f172a;
+      --accent:#22c55e;
+      --accent-soft:rgba(34,197,94,0.15);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border:#1f2937;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      min-height:100vh;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+      /* ⭐ OPTION A – Premium Blue/Purple Glow Background */
+      background: radial-gradient(circle at 30% 20%, #4f46e5 0%, #1e1b4b 35%, #000 100%);
+
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+    }
+    .card{
+      width:100%;
+      max-width:430px;
+      background:rgba(2,6,23,0.9);
+      border-radius:24px;
+      padding:28px 24px;
+      border:1px solid var(--border);
+      box-shadow:0 22px 60px rgba(0,0,0,0.75);
+      position:relative;
+      overflow:hidden;
+    }
+    .glow{
+      position:absolute;
+      inset:-40%;
+      background:radial-gradient(circle at top,var(--accent-soft) 0,transparent 55%);
+      opacity:0.6;
+      pointer-events:none;
+    }
+    .card-inner{position:relative;z-index:1}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      padding:3px 9px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(55,65,81,0.9);
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+    .status-dot{
+      width:8px;height:8px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+    }
+    h1{
+      font-size:23px;
+      margin-bottom:10px;
+      font-weight:600;
+    }
+    .subtitle{
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:22px;
+      line-height:1.45;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:22px;
+      font-size:11px;
+      color:var(--muted);
+      gap:12px;
+    }
+
+    .footer-row span strong{color:var(--text);font-weight:600;}
+
+    .btn-chat{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      padding:10px 18px;
+      border-radius:999px;
+      border:none;
+      background:var(--accent);
+      color:#022c22;
+      font-weight:600;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn-chat-icon{
+      width:16px;height:16px;
+      border-radius:999px;
+      border:2px solid #022c22;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+      background:rgba(255,255,255,0.85);
+    }
+
+    .btn-chat:active{
+      transform:translateY(1px);
+      box-shadow:0 6px 18px rgba(34,197,94,0.3);
+    }
+
+    @media(max-width:480px){
+      .card{border-radius:18px;padding:22px 18px;}
+      h1{font-size:20px;}
+      .footer-row{flex-direction:column;align-items:flex-start;}
+      .btn-chat{align-self:flex-end;}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow"></div>
+    <div class="card-inner">
+      <div class="badge">
+        <span class="status-dot"></span>
+        Online
+      </div>
+
+      <h1>SeyTV Inquiries</h1>
+      <p class="subtitle">
+        Chat with us for more information.
+      </p>
+
+      <div class="footer-row">
+        <span>Reply time: <strong>usually under 10 minutes</strong></span>
+        <button class="btn-chat" onclick="openTawk()">
+          <span class="btn-chat-icon">💬</span>
+          <span>Start Chat</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start of Tawk.to Script -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/692d6bfc729474197b62c8e2/1jbcmrlnc';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+
+  function openTawk(){
+    if(window.Tawk_API && Tawk_API.maximize){
+      Tawk_API.maximize();
+    }else{
+      alert("Chat is loading… please wait 2–3 seconds and try again.");
+    }
+  }
+  </script>
+  <!-- End of Tawk.to Script -->
+</body>
+</html>
