@@ -152,6 +152,7 @@
       margin-top:12px;padding:8px 12px;font-size:13px;
       border-radius:999px;background:var(--accent);color:#ffffff;border:none;
       cursor:pointer;
+      display:inline-block;text-align:center;
     }
     .plan-footer{font-size:12px;color:var(--muted);margin-top:4px;}
 
@@ -193,6 +194,27 @@
       header{position:static;}
       .nav-links{display:none;}
     }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp-float{
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      background:#25D366;
+      color:white;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+      z-index:9999;
+    }
+    .whatsapp-float:hover{
+      background:#1ebe5d;
+    }
   </style>
 </head>
 <body>
@@ -213,7 +235,9 @@
           <a href="#how">How it works</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button class="nav-cta" onclick="openTawk()">Chat with us</button>
+
+        <!-- WhatsApp -->
+        <a class="nav-cta" href="https://wa.me/2482643494" target="_blank">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -237,12 +261,14 @@
           </div>
 
           <div class="hero-actions">
-            <button class="btn-primary" onclick="openTawk()">Get more information</button>
+            <a class="btn-primary" href="https://wa.me/2482643494" target="_blank">
+              Message us on WhatsApp
+            </a>
             <span class="hero-note">Ask about prices, free trials and device setup.</span>
           </div>
         </div>
 
-        <!-- REPLACE WITH POSTER IMAGE -->
+        <!-- HERO IMAGE -->
         <div class="hero-media">
           <img src="seytv-poster.jpg" alt="SeyTV Channel Preview">
         </div>
@@ -294,7 +320,7 @@
           <div>
             <div class="section-title">Packages</div>
             <p class="section-sub">
-              Annual subscription – simple pricing with access to thousands of channels. Contact us for the latest offers and full channel list.
+              Annual subscription – simple pricing with access to thousands of channels.
             </p>
           </div>
         </div>
@@ -309,7 +335,7 @@
               <li>1 device connection.</li>
               <li>Support included.</li>
             </ul>
-            <button class="plan-btn" onclick="openTawk()">Ask about Standard</button>
+            <a class="plan-btn" href="https://wa.me/2482643494" target="_blank">Ask on WhatsApp</a>
           </div>
 
           <div class="plan highlight">
@@ -321,7 +347,7 @@
               <li>1 device connection.</li>
               <li>Support included.</li>
             </ul>
-            <button class="plan-btn" onclick="openTawk()">Ask about Premium</button>
+            <a class="plan-btn" href="https://wa.me/2482643494" target="_blank">Ask on WhatsApp</a>
             <div class="plan-footer">Ultimate package with full channel access.</div>
           </div>
 
@@ -331,7 +357,7 @@
               <li>Multiple devices or special requirements.</li>
               <li>Perfect for families or group setups.</li>
             </ul>
-            <button class="plan-btn" onclick="openTawk()">Talk to us</button>
+            <a class="plan-btn" href="https://wa.me/2482643494" target="_blank">Ask on WhatsApp</a>
             <div class="plan-footer">We can help design a package for your needs.</div>
           </div>
         </div>
@@ -387,21 +413,21 @@
             <div class="step-num">1</div>
             <div class="step-title">Chat with us</div>
             <p class="step-text">
-              Use the chat to tell us your name, preferred device and any questions you have.
+              Message us on WhatsApp and tell us your name and device type.
             </p>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-title">Choose a package</div>
             <p class="step-text">
-              We’ll recommend the best package based on your viewing needs and budget.
+              We’ll recommend the best package based on your needs.
             </p>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-title">Receive app &amp; login</div>
             <p class="step-text">
-              You’ll receive the app details and login credentials, then you can start watching.
+              Install the app on your device and start watching instantly.
             </p>
           </div>
         </div>
@@ -415,7 +441,7 @@
           <div>
             <div class="section-title">Inquiries &amp; support</div>
             <p class="section-sub">
-              Send us a message in the chat and we’ll respond as soon as possible.
+              Send us a message on WhatsApp and we’ll respond as soon as possible.
             </p>
           </div>
         </div>
@@ -424,13 +450,13 @@
           <div class="contact-main">
             <strong>SeyTV inquiries</strong>
             <p>
-              For prices, free trials, device setup or any other questions, please reach out via the live chat.
+              For prices, free trials, device setup or any other questions, please reach out via WhatsApp.
             </p>
             <p class="contact-note">
               You can include your name and mobile / WhatsApp number if you’d like us to contact you directly.
             </p>
           </div>
-          <button class="btn-primary" onclick="openTawk()">Open chat</button>
+          <a class="btn-primary" href="https://wa.me/2482643494" target="_blank">Chat on WhatsApp</a>
         </div>
       </div>
     </section>
@@ -443,31 +469,16 @@
     </div>
   </footer>
 
-  <!-- Tawk.to widget -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/692d6bfc729474197b62c8e2/1jbcmrlnc';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2482643494" target="_blank" class="whatsapp-float">💬</a>
 
-    function openTawk(){
-      if(window.Tawk_API && Tawk_API.maximize){
-        Tawk_API.maximize();
-      }else{
-        alert("Chat is loading… please wait a few seconds and try again.");
-      }
-    }
-
+  <script>
     document.addEventListener("DOMContentLoaded", function(){
       var y = new Date().getFullYear();
       var el = document.getElementById("year");
       if(el){ el.textContent = y; }
     });
   </script>
+
 </body>
 </html>
