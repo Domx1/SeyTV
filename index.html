@@ -1,487 +1,432 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>SeyTV – Premium TV Streaming Service</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg-alt:#f8f9fb;
-      --accent:#22c55e;
-      --accent-soft:rgba(34,197,94,0.12);
-      --text:#111827;
-      --muted:#6b7280;
-      --border:#e5e7eb;
-      --card:#ffffff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{scroll-behavior:smooth;}
-    body{
-      min-height:100vh;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 16px;}
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M80EZLW82K"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-M80EZLW82K');
+    </script>
+    
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <title>SeyTV - #1 Best TV Service Available Around The Market.</title>
+  <meta name="title" content="SeyTV - #1 Best TV Service Available Around The Market.">
+  <meta name="description" content="The most powerful  Provider in the market, where we use the latest technologies and top servers to provide you with a service of optimal quality to follow your favourite programs. We are one of the best  Services in the market, We provide high quality  Streams and premium  service. We are an  service provider">
+  <meta name="keywords" content="Best  Provider, ,  stream,  service, best  service,  streaming service,  service provider,  service providers, secret service ,  paid service, premium  service, paid  service, The #1 Leading , Sports, Best , Buy , India, UK Entertainment, USA Locals, Movies, VOD, Series, Netflix, Disney, Showbox,  server, Xtream codes, ,m3u,  smarters,Duplex play, Tivimate">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https:///">
+  <meta property="og:title" content="SeyTV - #1 Best TV Service Available Around The Market.">
+  <meta property="og:description" content="The most powerful  Provider in the market, where we use the latest technologies and top servers to provide you with a service of optimal quality to follow your favourite programs. We are one of the best  Services in the market, We provide high quality  Streams and premium  service. We are an  service provider">
+  <meta property="og:image" content="">
+  <meta name="og:keywords" content="Best  Provider, ,  stream,  service, best  service,  streaming service,  service provider,  service providers, secret service ,  paid service, premium  service, paid  service, The #1 Leading , Sports, Best , Buy , India, UK Entertainment, USA Locals, Movies, VOD, Series, Netflix, Disney, Showbox,  server, Xtream codes, ,m3u,  smarters,Duplex play, Tivimate">
+  
+  <!-- Bootstrap CSS start -->
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <!-- Bootstrap CSS end -->
 
-    /* NAVBAR */
-    header{
-      position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,0.96);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      height:60px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;font-weight:600;font-size:17px;
-    }
-    .brand-logo{
-      width:26px;height:26px;border-radius:999px;
-      background:var(--accent);
-      display:flex;align-items:center;justify-content:center;
-      font-size:14px;color:#ffffff;font-weight:700;
-    }
-    .nav-links{
-      display:flex;gap:18px;font-size:13px;color:var(--muted);
-    }
-    .nav-links a:hover{color:var(--accent);}
-    .nav-cta{
-      font-size:13px;
-      padding:6px 12px;border-radius:999px;
-      border:none;background:var(--accent);color:#ffffff;
-      font-weight:600;cursor:pointer;
-    }
+  <!-- plugin CSS start --> 
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&ampdisplay=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <!-- plugin CSS end -->
 
-    /* HERO */
-    .hero{
-      padding:40px 0;
-      background:var(--bg);
-    }
-    .hero-grid{
-      display:grid;grid-template-columns:1.2fr 1fr;
-      gap:32px;align-items:center;
-    }
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:6px;
-      font-size:11px;text-transform:uppercase;letter-spacing:.08em;
-      padding:3px 9px;border-radius:999px;
-      background:var(--accent-soft);
-      color:var(--accent);margin-bottom:10px;
-    }
-    h1{
-      font-size:34px;font-weight:700;margin-bottom:12px;
-    }
-    .hero-sub{
-      font-size:15px;color:var(--muted);margin-bottom:20px;max-width:480px;
-    }
-    .hero-highlights{
-      display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;
-    }
-    .pill{
-      padding:5px 12px;border-radius:999px;
-      background:#f3f4f6;
-      border:1px solid #e5e7eb;
-      font-size:12px;color:#374151;
-    }
-    .pill-strong{
-      background:var(--accent-soft);border-color:var(--accent);color:var(--accent);
-    }
-    .hero-actions{
-      display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;
-    }
-    .btn-primary{
-      padding:10px 18px;border:none;border-radius:999px;
-      background:var(--accent);color:#ffffff;font-weight:600;font-size:14px;
-      cursor:pointer;
-    }
-    .hero-note{
-      font-size:12px;color:var(--muted);
-    }
-    .hero-media img{
-      width:100%;border-radius:16px;border:1px solid var(--border);
-      display:block;
-    }
+  <!-- custom CSS start -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- custom CSS end -->
 
-    /* SECTIONS */
-    section{padding:38px 0;}
-    section:nth-of-type(even){background:var(--bg-alt);}
-    .section-header{
-      display:flex;justify-content:space-between;align-items:flex-start;
-      gap:16px;margin-bottom:20px;
-    }
-    .section-title{font-size:22px;font-weight:700;margin-bottom:6px;}
-    .section-sub{font-size:14px;color:var(--muted);max-width:420px;}
-
-    /* CHANNEL GRID */
-    .channel-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;
-    }
-    .channel-card{
-      padding:16px;border-radius:14px;
-      background:#ffffff;border:1px solid var(--border);
-      font-size:13px;
-    }
-    .channel-tag{font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
-    .channel-name{font-weight:600;margin-bottom:4px;}
-    .channel-note{font-size:13px;color:var(--muted);}
-
-    /* PACKAGES */
-    .packages{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;
-    }
-    .plan{
-      padding:18px;border-radius:18px;
-      background:#ffffff;border:1px solid var(--border);
-      font-size:13px;
-    }
-    .plan.highlight{
-      border-color:var(--accent);
-      background:#f0fdf4;
-    }
-    .plan-name{font-weight:600;font-size:15px;}
-    .plan-price{font-size:20px;font-weight:700;margin-top:6px;}
-    .plan-price span{font-size:11px;color:var(--muted);font-weight:400;margin-left:4px;}
-    .plan-list{list-style:none;margin-top:10px;padding-left:0;}
-    .plan-list li{font-size:13px;color:var(--muted);margin-bottom:6px;}
-    .plan-btn{
-      margin-top:12px;padding:8px 12px;font-size:13px;
-      border-radius:999px;background:var(--accent);color:#ffffff;border:none;
-      cursor:pointer;
-      display:inline-block;text-align:center;
-    }
-    .plan-footer{font-size:12px;color:var(--muted);margin-top:4px;}
-
-    /* REQUIREMENTS */
-    .steps{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;
-    }
-    .step{
-      padding:16px;border-radius:16px;background:#ffffff;border:1px solid var(--border);
-      font-size:13px;
-    }
-    .step-num{
-      width:24px;height:24px;border-radius:999px;
-      display:flex;align-items:center;justify-content:center;
-      background:var(--accent-soft);color:var(--accent);font-size:12px;
-      margin-bottom:6px;font-weight:700;
-    }
-    .step-title{font-weight:600;margin-bottom:4px;}
-    .step-text{font-size:13px;color:var(--muted);}
-
-    /* CONTACT */
-    .contact-card{
-      padding:18px;border-radius:18px;background:#ffffff;border:1px solid var(--border);
-      display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;
-      font-size:13px;
-    }
-    .contact-main{max-width:420px;}
-    .contact-main strong{display:block;font-size:15px;margin-bottom:4px;}
-    .contact-note{font-size:12px;color:var(--muted);margin-top:4px;}
-
-    footer{
-      border-top:1px solid var(--border);
-      padding:14px 0;background:var(--bg);font-size:12px;color:var(--muted);
-    }
-
-    @media(max-width:768px){
-      .hero-grid{grid-template-columns:1fr;}
-      .hero-media{margin-top:16px;}
-      header{position:static;}
-      .nav-links{display:none;}
-    }
-
-    /* WHATSAPP FLOATING BUTTON */
-    .whatsapp-float{
-      position:fixed;
-      bottom:22px;
-      right:22px;
-      background:#25D366;
-      color:white;
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.25);
-      z-index:9999;
-    }
-    .whatsapp-float:hover{
-      background:#1ebe5d;
-    }
-  </style>
+  <title>SeyTV - #1 Best TV Service Available Around The Market.</title>
 </head>
-<body>
 
-  <!-- NAVBAR -->
-  <header>
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">
-          <div class="brand-logo">S</div>
-          <div>SeyTV</div>
+<body> 
+
+
+   <!-- hero section start -->
+   <section class="hero-section">
+    <!-- header section start -->
+  <header class="header_section pt-2">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          
+          <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#pricing">Pricing</a>
+
+              </li>
+
+            </ul>
+            <form class="d-flex">
+              
+              <a href="https://t.me/+o7vVlVhx9S9hYjhk" target="_blank">Buy Now</a>
+
+            </form>
+          </div>
         </div>
-        <nav class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#channels">Channels</a>
-          <a href="#packages">Packages</a>
-          <a href="#requirements">Requirements</a>
-          <a href="#how">How it works</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <!-- WhatsApp -->
-        <a class="nav-cta" href="https://wa.me/2482643494" target="_blank">WhatsApp</a>
-      </div>
+      </nav>
     </div>
   </header>
-
-  <!-- HERO -->
-  <main id="home">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">Premium TV streaming service</div>
-          <h1>All your favourite TV in one place.</h1>
-          <p class="hero-sub">
-            8000+ live channels, sports, movies and series – delivered over the internet to your Android TV or Firestick.
-          </p>
-
-          <div class="hero-highlights">
-            <span class="pill pill-strong">8000+ channels</span>
-            <span class="pill">Sports · Movies · Series</span>
-            <span class="pill">Android TV &amp; Firestick</span>
-            <span class="pill">Annual subscription</span>
+  <!-- header section end -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="hero-txt-wrap">
+            <h6>WELCOME TO SEYTV</h6>
+            <h1>We help people <br>
+              <span>Enjoy Watching TV!</span></h1>
+            <p>The most powerful  provider in the market, where we use the latest technologies and top servers to provide you with a service of optimal quality to follow your favorite programs.</p>
+            <div class="hero_btn">
+              <a href="pricing.html">Buy Now</a>
+              <a href="#">Learn More</a>
+            </div>
+            
           </div>
+          <div class="hero-bottom-wrap">
+             
+            <div class="media">
+              <img src="images/h-icon-1.svg" alt="a" class="img-fluid">
+              <div class="media-body">
+                <h5>20,000+</h5>
+                <p>Channels Available</p>
+              </div>
+            </div>
+            <div class="media">
+              <img src="images/h-icon-2.svg" alt="a" class="img-fluid">
+              <div class="media-body">
+                <h5>50+</h5>
+                <p>Countries</p>
+              </div>
+            </div>
+            <div class="media">
+              <img src="images/h-icon-3.svg" alt="a" class="img-fluid">
+              <div class="media-body">
+                <h5>500+</h5>
+                <p>Customers</p>
+              </div>
+            </div>
 
-          <div class="hero-actions">
-            <a class="btn-primary" href="https://wa.me/2482643494" target="_blank">
-              Message us on WhatsApp
+          </div>
+        </div> 
+      </div>
+    </div>
+  </section>
+  <!-- hero section end -->
+
+<!-- mobile menu start -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header pt-5">
+    <h5 id="offcanvasRightLabel">
+    </h5> 
+      <img src="images/close.png" alt="Logo" class="img-fluid" style="width: 40px; cursor: pointer;" data-bs-dismiss="offcanvas"> 
+  </div>
+  <div class="offcanvas-body">
+    <div class="mobile-menu">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pricing.html">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#faq">FAQs</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="https://store./login">Log In</a>
+        </li>
+      </ul>
+
+      <a href="pricing.html" class="btn btn-primary d-block w-100 text-center py-3">Buy Now</a>
+  
+      <div class="ftr-social"> 
+        <ul class="text-start">
+          <li><span>Connect with us</span></li>
+          <li><a href="#"><i class="fas fa-paper-plane"></i></a></li> 
+          <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li> 
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li> 
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- mobile menu end -->
+
+  <div class="d-md-none">
+    <img src="images/phne-img.png" alt="a" class="img-fluid">
+  </div>
+
+  <!-- channel section start -->
+  <section class="channel-section pa-y4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="channel-txt-wrap">
+            <h6>Over 20,000+ Channels from all over the world</h6>
+            <ul>
+              <li><a href="#"><img src="images/cnn.svg" alt="CNN" class="img-fluid"></a></li>
+              <li><a href="#"><img src="images/cnbc.svg" alt="cnbc" class="img-fluid"></a></li>
+              <li><a href="#"><img src="images/fx.svg" alt="fx" class="img-fluid"></a></li>
+              <li><a href="#"><img src="images/nba.svg" alt="nba" class="img-fluid"></a></li>
+              <li><a href="#"><img src="images/bbc.svg" alt="bbc" class="img-fluid"></a></li>
+              <li><a href="#"><img src="images/hbo.svg" alt="hbo" class="img-fluid"></a></li>
+            </ul>
+
+            <p>Channels from all over the world US, UK, CA, DE, NL, ESP, AR, and most countries worldwide , <br> that are compatible with all Smart TVs, Laptops, Smart Phones & More! <br>
+              We Also have a great collection of 24/7 Channels!!</p>
+
+              <a href=""> <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- channel section end -->
+
+  <!-- about us start --> 
+    <section class="exclusive-section pa-y4">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <div class="common-heading">
+              <h6>ABOUT US</h6>
+              <h2>Why SeyTV is different <br> from other  Providers?</h2>
+              
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="exclusive-txt-wrap"> 
+              <h2>Details about the first main <br> feature about SeyTV</h2>
+   
+              <ul>
+                <li>
+                  <img src="images/check-icon.svg" alt="Icon" class="img-fluid"> We provide the biggest choice of stations and VOD
+                </li>
+                <li>
+                  <img src="images/check-icon.svg" alt="Icon" class="img-fluid"> We provide 24/7 Support 
+                </li>
+                <li>
+                  <img src="images/check-icon.svg" alt="Icon" class="img-fluid"> We only offer the best deals on the market!
+                </li>
+              </ul>
+   
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="exclusive-img">
+              <img src="images/about.png" alt="Icon" class="img-fluid">
+            </div>
+          </div> 
+        </div>
+        <div class="row mt-5  align-items-center justify-content-center">
+          <div class="col-lg-5 ordr_2">
+            <div class="exclusive-img exclusive-img-2">
+              <img src="images/about-2.svg" alt="Icon" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-5 ordr_1">
+            <div class="exclusive-txt-wrap"> 
+              <h6><i class="fas fa-star"></i> SEYTV EXCLUSIVE</h6>
+              <h2>Second Main Feature about
+                SeyTV </h2>
+   
+              <ul>
+                <li>
+                  <img src="images/check-icon.svg" alt="Icon" class="img-fluid"> Solid  Service, Without Buffering and Freezing (Stable Internet Required).
+                </li>
+                <li>
+                  <img src="images/check-icon.svg" alt="Icon" class="img-fluid"> Customer Support through WhatsApp 
+                </li> 
+              </ul> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>    
+  <!-- about us end -->
+
+  <!-- plan section start -->
+  
+  <!-- plan section start -->
+  <section class="plan-section pa-y4 plan-2" id="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="common-heading">
+            <h6>PRICING PLAN</h6>
+            <h2>We offer the best deals in market!</h2>
+            <p>With our Plans you can enjoy worldwide TV Channels at a cheap price &amp; have a great experience!</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 mb-4" id="pricing-normal">
+          <div class="plan-wrap-box">
+            <div class="plan-top">
+              <span class="badg">NORMAL</span>
+              <h3>1500 SCR <span>/Year</span></h3>
+            </div>
+            <div class="plan-list-wrap">
+              <h5>Includes :</h5>
+              <ul>
+                <li><img src="images/check-gren.svg" alt="a" class="img-fluid">8,000+ live channels (Live Sports ect..)</li>
+                <li><img src="images/check-gren.svg" alt="a" class="img-fluid">19,000 Movies / Series (VOD)</li>
+                <li><img src="images/check-gren.svg" alt="a" class="img-fluid">1 Connection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4" id="pricing-premium">
+          <div class="plan-wrap-box">
+            <div class="plan-top">
+              <span class="badg">PREMIUM</span>
+              <h3>2400 SCR <span>/Year</span></h3>
+            </div>
+            <div class="plan-list-wrap">
+              <h5>Includes :</h5>
+              <ul>
+                <li><img src="images/check-gren.svg" alt="a" class="img-fluid">10,000+ live channels (Live Sports ect..)</li>
+                <li><img src="images/check-gren.svg" alt="a" class="img-fluid">75,000+ Movies / Series (VOD)</li>
+                <li><img src="images/check-gren.svg" alt="a" class="img-fluid">1 Connection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- faq section end -->
+
+  
+  <!-- reseller section end -->
+
+  <!-- join section start -->
+  <section class="join-section pa-y4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="common-heading">
+            <h6>CONTACT</h6>
+            <h2>Got Questions? We’re here to <br> Answer all of them</h2>
+
+            <p> <br> </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="join-bttn">
+            <a href="https://discord.gg/MA3ueCNyz4">
+              <div class="media">
+                <img src="images/discord.svg" alt="Discord" class="img-fluid">
+                <div class="media-body">
+                  <h6>Join our Discord Server</h6>
+                  <p>Click here to be a part of the Discord Community Server</p>
+                </div>
+              </div>
             </a>
-            <span class="hero-note">Ask about prices, free trials and device setup.</span>
           </div>
         </div>
-
-        <!-- HERO IMAGE -->
-        <div class="hero-media">
-          <img src="seytv-poster.jpg" alt="SeyTV Channel Preview">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CHANNELS -->
-    <section id="channels">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Channel highlights</div>
-            <p class="section-sub">
-              Popular sports, movie and entertainment channels – plus many more. Availability may vary by package.
-            </p>
-          </div>
-        </div>
-
-        <div class="channel-grid">
-          <div class="channel-card">
-            <div class="channel-tag">Sports</div>
-            <div class="channel-name">Sky Sports, BT Sport &amp; more</div>
-            <div class="channel-note">Live football, Premier League, F1 and other major events.</div>
-          </div>
-          <div class="channel-card">
-            <div class="channel-tag">Movies &amp; series</div>
-            <div class="channel-name">Sky Cinema, Netflix, Prime Video</div>
-            <div class="channel-note">Series and on-demand content.</div>
-          </div>
-          <div class="channel-card">
-            <div class="channel-tag">Entertainment</div>
-            <div class="channel-name">UK &amp; US channels</div>
-            <div class="channel-note">News, lifestyle and general entertainment channels.</div>
-          </div>
-          <div class="channel-card">
-            <div class="channel-tag">Kids</div>
-            <div class="channel-name">Cartoons &amp; family channels</div>
-            <div class="channel-note">Great content for younger viewers.</div>
+        <div class="col-lg-6">
+          <div class="join-bttn">
+            
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  <!-- join section end -->
 
-    <!-- PACKAGES -->
-    <section id="packages">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Packages</div>
-            <p class="section-sub">
-              Annual subscription – simple pricing with access to thousands of channels.
-            </p>
+  
+<!-- footer section start -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-8 col-sm-6 col-12">
+          <div class="ftr-logo">
+            <a href="index.html">
+            </a>
           </div>
         </div>
-
-        <div class="packages">
-          <div class="plan">
-            <div class="plan-name">Standard</div>
-            <div class="plan-price">SCR 1,500<span>/ year</span></div>
-            <ul class="plan-list">
-              <li>Access to 8000+ channels.</li>
-              <li>Sports, movies, news and entertainment.</li>
-              <li>1 device connection.</li>
-              <li>Support included.</li>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <div class="ftr-links">
+            <h6>PRODUCTS</h6>
+            <ul>
+              <li><a href="#pricing-normal">Normal Package – 1500 SCR / Year</a></li>
+              <li><a href="#pricing-premium">Premium Package – 2400 SCR / Year</a></li>
             </ul>
-            <a class="plan-btn" href="https://wa.me/2482643494" target="_blank">Ask on WhatsApp</a>
-          </div>
-
-          <div class="plan highlight">
-            <div class="plan-name">Premium</div>
-            <div class="plan-price">SCR 2,400<span>/ year</span></div>
-            <ul class="plan-list">
-              <li>Access to 8000+ channels.</li>
-              <li>Full VOD access: Premium movies &amp; series.</li>
-
-              <li>1 device connection.</li>
-              <li>Support included.</li>
-            </ul>
-            <a class="plan-btn" href="https://wa.me/2482643494" target="_blank">Ask on WhatsApp</a>
-            <div class="plan-footer">Full VOD access: Premium movies, series & extra content.</div>
-
-          </div>
-
-          <div class="plan">
-            <div class="plan-name">Custom &amp; groups</div>
-            <ul class="plan-list">
-              <li>Multiple devices or special requirements.</li>
-              <li>Perfect for families or group setups.</li>
-            </ul>
-            <a class="plan-btn" href="https://wa.me/2482643494" target="_blank">Ask on WhatsApp</a>
-            <div class="plan-footer">We can help design a package for your needs.</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- REQUIREMENTS -->
-    <section id="requirements">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Requirements</div>
-            <p class="section-sub">
-              To enjoy smooth and stable streaming on SeyTV, you'll need the following:
-            </p>
-          </div>
+      <div class="row">
+        <div class="col-lg-6">
+
         </div>
+        <div class="col-lg-6">
+          <div class="ftr-social"> 
+  <ul>
+    <li><span>Connect with us</span></li>
 
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-title">Compatible device</div>
-            <p class="step-text">
-              Android TV, Android TV Box, or Amazon Fire Stick.
-            </p>
-          </div>
+    <!-- Discord -->
+    <li>
+      <a href="https://discord.gg/MA3ueCNyz4" target="_blank">
+        <i class="fab fa-discord"></i>
+      </a>
+    </li>
 
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-title">Good internet</div>
-            <p class="step-text">
-              A stable unlimited internet connection for best performance.
-            </p>
-          </div>
+    <!-- Telegram -->
+    <li>
+      <a href="https://t.me/+o7vVlVhx9S9hYjhk" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
         </div>
       </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="section-title">How it works</div>
-            <p class="section-sub">
-              Getting started is simple. All you need is a good internet connection and a compatible device.
-            </p>
-          </div>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-title">Chat with us</div>
-            <p class="step-text">
-              Message us on WhatsApp and tell us your name and device type.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-title">Choose a package</div>
-            <p class="step-text">
-              We’ll recommend the best package based on your needs.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-title">Receive app &amp; login</div>
-            <p class="step-text">
-              Install the app on your device and start watching instantly.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-header">
-          <div>
-            <div class="section-title">Inquiries &amp; support</div>
-            <p class="section-sub">
-              Send us a message on WhatsApp and we’ll respond as soon as possible.
-            </p>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-main">
-            <strong>SeyTV inquiries</strong>
-            <p>
-              For prices, free trials, device setup or any other questions, please reach out via WhatsApp.
-            </p>
-            <p class="contact-note">
-              You can include your name and mobile / WhatsApp number if you’d like us to contact you directly.
-            </p>
-          </div>
-          <a class="btn-primary" href="https://wa.me/2482643494" target="_blank">Chat on WhatsApp</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
-      <span>© <span id="year"></span> SeyTV. All rights reserved.</span>
-      <span>For informational purposes – channel availability may change over time.</span>
     </div>
   </footer>
+  <!-- footer section end -->
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/2482643494" target="_blank" class="whatsapp-float">💬</a>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      var y = new Date().getFullYear();
-      var el = document.getElementById("year");
-      if(el){ el.textContent = y; }
-    });
-  </script>
 
-</body>
-</html>
+  <!-- Bootstrap Bundle with Popper JS start -->
+  <script src="js/bootstrap.bundle.min.js"></script> 
+  <!-- Bootstrap Bundle with Popper JS end -->
 
+  <!-- Plugin JS start --> 
+  <script src="js/fontawesome.min.js"></script>
+  <!-- Plugin JS end -->
+ 
+
+  <!-- Custom JS start --> 
+  <script src="js/custom.js"></script>
+  <!-- Custom JS end -->
+
+
+
+</body></html>

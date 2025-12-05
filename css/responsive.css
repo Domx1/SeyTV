@@ -1,0 +1,301 @@
+/* Extra small devices (portrait phones, less than 576px) XS */
+@media(min-width: 320px) and (max-width: 575px) {
+    .hero-section{
+        background-image: none;
+    }
+    .header_section  .navbar-light .btn{
+        border-color: #0F141E;
+    }
+    .header_section  .navbar-light .btn svg{
+        color: #0F141E;
+        font-size: 22px;
+    }
+    .header_section .navbar-nav .nav-item .nav-link{
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .header_section .d-flex{
+        margin-top: 2rem;
+        justify-content: center;
+    }
+    .hero-txt-wrap h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .hero-txt-wrap p{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    br{
+        display: none;
+    }
+    .hero-txt-wrap .hero_btn a{
+       display: block;
+       margin-right: 0;
+       margin-left: 0;
+       width: 90%;
+       text-align: center!important;
+       margin: 0 5%;
+       margin-bottom: 1rem;
+       justify-content: center;
+    }
+    .hero-bottom-wrap p{
+        font-size: 13px;
+    }
+    .common-heading h2{
+        font-size: 32px;
+        line-height: 40px; 
+    }
+    .exclusive-txt-wrap h2{
+        font-size: 26px;
+        line-height: 36px; 
+    }
+    .exclusive-txt-wrap ul li{
+        font-size: 16px;
+    }
+    .ordr_1{
+        order: 1;
+    }
+    .ordr_2{
+        order: 2;
+    }
+    .price-filter-head img{
+        right: 0%!important;
+    }
+    .plan-wrap-box {
+       
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    .plan-more{
+        flex-direction: column;
+    }
+    .ultimate-table-wrap table{
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .get-start-bg .media{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .get-start-bg p{
+        margin-bottom: 10px;
+    }
+    .faq-ask-wrap .accordion .accordion-item button{
+        font-size: 13px;
+    }
+    .scheme-box{
+        flex-direction: column;
+    }
+    .scheme-box .scheme-lft {
+        text-align: left;
+        border-right: 0px solid #FFC700;
+        margin-right: 0rem;
+        padding-right: 0rem;
+        border-bottom: 2px solid #FFC700;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+    .scheme-box .scheme-rgt ul li{
+        font-size: 14px;
+    }
+    .join-bttn{
+        margin-top: 1rem;
+    }
+    .join-bttn .media h6{
+        font-size: 18px;
+    }
+    .ftr-logo{
+        margin-bottom: 1rem;
+    }
+    .center-bttn p{
+        font-size: 12px;
+    }
+    .center-bttn p a{
+        font-size: 14px;
+    }
+    .pa-y4{
+        padding: 2rem 0;
+    }
+    .error-txt h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    /* mobile menu */
+
+    .offcanvas{
+        background-color: #0F141E;
+    }
+
+    .mobile-menu .nav-item .nav-link{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 40px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 1.5rem;
+        
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) SM */
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero-section{
+        background-image: none;
+    }
+    .header_section  .navbar-light .btn{
+        border-color: #0F141E;
+    }
+    .header_section  .navbar-light .btn svg{
+        color: #0F141E;
+        font-size: 22px;
+    }
+    .header_section .navbar-nav .nav-item .nav-link{
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .header_section .d-flex{
+        margin-top: 2rem;
+        justify-content: center;
+    }
+    .hero-txt-wrap h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .hero-txt-wrap p{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    br{
+        display: none;
+    }
+    .hero-txt-wrap .hero_btn a{
+       display: block;
+       margin-right: 0;
+       margin-left: 0;
+       width: 90%;
+       text-align: center!important;
+       margin: 0 5%;
+       margin-bottom: 1rem;
+       justify-content: center;
+    }
+    .hero-bottom-wrap p{
+        font-size: 13px;
+    }
+    .common-heading h2{
+        font-size: 32px;
+        line-height: 40px; 
+    }
+    .exclusive-txt-wrap h2{
+        font-size: 26px;
+        line-height: 36px; 
+    }
+    .exclusive-txt-wrap ul li{
+        font-size: 16px;
+    }
+    .ordr_1{
+        order: 1;
+    }
+    .ordr_2{
+        order: 2;
+    }
+    .price-filter-head img{
+        right: 0%!important;
+    }
+    .plan-wrap-box {
+       
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    .plan-more{
+        flex-direction: column;
+    }
+    .ultimate-table-wrap table{
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .get-start-bg .media{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .get-start-bg p{
+        margin-bottom: 10px;
+    }
+    .faq-ask-wrap .accordion .accordion-item button{
+        font-size: 13px;
+    }
+    .scheme-box{
+        flex-direction: column;
+    }
+    .scheme-box .scheme-lft {
+        text-align: left;
+        border-right: 0px solid #FFC700;
+        margin-right: 0rem;
+        padding-right: 0rem;
+        border-bottom: 2px solid #FFC700;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+    .scheme-box .scheme-rgt ul li{
+        font-size: 14px;
+    }
+    .join-bttn{
+        margin-top: 1rem;
+    }
+    .join-bttn .media h6{
+        font-size: 18px;
+    }
+    .ftr-logo{
+        margin-bottom: 1rem;
+    }
+    .center-bttn p{
+        font-size: 12px;
+    }
+    .center-bttn p a{
+        font-size: 14px;
+    }
+    .pa-y4{
+        padding: 2rem 0;
+    }
+    .error-txt h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    /* mobile menu */
+
+    .offcanvas{
+        background-color: #0F141E;
+    }
+
+    .mobile-menu .nav-item .nav-link{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 40px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 1.5rem;
+        
+    }
+}
+
+/* Medium devices (tablets, 768px and up) MD */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Large devices (desktops, 992px and up) LG */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large desktops, 1200px and up) XL */
+@media (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Extra extra large devices (extra large desktops, 1400px and up) XXL */
+@media (min-width: 1400px) {}
