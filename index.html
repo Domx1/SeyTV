@@ -14,7 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>SeyTV - #1 Best TV Service Available Around The Market.</title>
-  <meta name="description" content="The most powerful Provider in the market.">
 
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.svg">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -28,10 +27,12 @@
 <body>
 
 <section class="hero-section">
+
 <header class="header_section pt-2">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
+
         <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <i class="fa-solid fa-bars-staggered"></i>
         </button>
@@ -41,10 +42,12 @@
             <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
             <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
           </ul>
+
           <form class="d-flex">
             <a href="https://t.me/+o7vVlVhx9S9hYjhk" target="_blank">Buy Now</a>
           </form>
         </div>
+
       </div>
     </nav>
   </div>
@@ -53,40 +56,63 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-12">
+
       <div class="hero-txt-wrap">
         <h6>WELCOME TO SEYTV</h6>
         <h1>We help people <br><span>Enjoy Watching TV!</span></h1>
-        <p>The most powerful provider in the market with top servers and premium quality.</p>
 
-        <!-- BUTTONS -->
-        <div class="hero_btn" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <p>
+          The most powerful provider in the market, where we use the latest technologies
+          and top servers to provide you with a service of optimal quality.
+        </p>
+
+        <!-- HERO BUTTONS -->
+        <div class="hero_btn">
           <a href="https://t.me/+o7vVlVhx9S9hYjhk" target="_blank">Buy Now</a>
           <a href="#">Learn More</a>
 
-          <!-- NEW SMALL DOWNLOAD BUTTON -->
-          <a href="https://short.do/T7u7XU"
-             target="_blank"
-             style="
-               padding:8px 14px;
-               font-size:14px;
-               border-radius:6px;
-               background:#ffffff;
-               color:#000;
-               border:1px solid #ddd;
-               text-decoration:none;
-             ">
-            📲 Download Our App
+          <!-- NEW DOWNLOAD BUTTON -->
+          <a href="https://short.do/T7u7XU" target="_blank" class="btn-download-app">
+            Download Our App
           </a>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>
+
 </section>
 
+<!-- Bootstrap JS -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/fontawesome.min.js"></script>
 <script src="js/custom.js"></script>
+
+<!-- SAFE CSS ADDITION -->
+<style>
+.hero_btn{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero_btn .btn-download-app{
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.hero_btn .btn-download-app:hover{
+  opacity: 1;
+}
+</style>
 
 </body>
 </html>
